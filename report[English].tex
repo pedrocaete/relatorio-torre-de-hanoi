@@ -218,7 +218,7 @@ Loads the initial menu
 \subsubsection{void finalMenu()}
 Loads the final menu
 \subsubsection{void game()}
-Initializes the tower discs. They are initialized outside of \setup() because it's necessary to wait for the player to choose the desired number of discs for the game. Performing this initialization only once requires a slightly more complex code. Follows:
+Initializes the tower discs. They are initialized outside of setup() because it's necessary to wait for the player to choose the desired number of discs for the game. Performing this initialization only once requires a slightly more complex code. Follows:
 
 \begin{itshape}
 \begin{verbatim}
@@ -231,7 +231,7 @@ if (initialize) {
 \end{verbatim}
 \end{itshape}
 
-The timer is activated until the end of the game. Pillars and discs are displayed. If a disc is clicked by the mouse, it will follow it. This is done by the following code, which is directly related to the \moveDisc() function:
+The timer is activated until the end of the game. Pillars and discs are displayed. If a disc is clicked by the mouse, it will follow it. This is done by the following code, which is directly related to the moveDisc() function:
 
 \begin{itshape}
 \begin{verbatim}
@@ -247,7 +247,7 @@ if (move == 1) {
 \end{itshape}
 
 \subsubsection{void moveDisc()}
-Called within \mousePressed(). Codes that allow the disc to follow the mouse after being clicked and move to a specific tower when there is a subsequent click in its area. Follows the code:
+Called within mousePressed(). Codes that allow the disc to follow the mouse after being clicked and move to a specific tower when there is a subsequent click in its area. Follows the code:
 
 \begin{itshape}
 \begin{verbatim}
@@ -296,13 +296,13 @@ if (initialize == false){
 The code below the comment \textit{// Reposition the disc after a click in an allowed location} is fundamental for the entire program because it manages the algorithm that enables the movement of a disc from one tower to another, managing the involved stacks. In terms of importance, it is the topmost code. Essentially, it removes the disc from the tower it originated from, sets its x position to the center of the chosen tower to be placed, its y position above the topmost disc of the chosen tower, adds the disc to the placed tower, and updates \textit{referencedDisc} for the code to execute correctly.
 
 \subsubsection{void changeTotalDiscs()}
-Called within \mousePressed(). Generates the total number of discs and buttons to increase or decrease them. Appears only in the initial menu.
+Called within mousePressed(). Generates the total number of discs and buttons to increase or decrease them. Appears only in the initial menu.
 
 \subsubsection{void startGame()}
-Called within \mousePressed(). Generates the Play button and subsequently starts the game after it is clicked. Appears only in the initial menu.
+Called within mousePressed(). Generates the Play button and subsequently starts the game after it is clicked. Appears only in the initial menu.
 
 \subsubsection{void mousePressed()}
-Allows \moveDiscs(), \changeTotalDiscs(), and \startGame() to be called only when the mouse is clicked. It's worth noting that these functions also have internal conditions for execution.
+Allows moveDiscs(), changeTotalDiscs(), and startGame() to be called only when the mouse is clicked. It's worth noting that these functions also have internal conditions for execution.
 
 \section{Results}
 
